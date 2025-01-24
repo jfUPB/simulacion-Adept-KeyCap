@@ -1,6 +1,6 @@
 - Comprendo el Ruido de Perlin como un generador de números aleatorios de maenra controlada, es decir, establece ciertos parametros dentro de estos para que los números que generan, estén relativamente cerca del anterior, generando tranciones más suaves entre estos números aleatorios. Como se puede observar en [la figura de la pagina de referencia](https://natureofcode.com/random/#a-smoother-approach-with-perlin-noise).
 
-- Modifiqué en el código el aumento del valor **t** para aumentar la velocidad de la simulación, después multipliqué por 0.1 la variable xoff para hacer que se generaran valores más estables:
+- Modifiqué en el código el aumento del valor **t** para aumentar la velocidad de la simulación, después multipliqué por 0.1 la variable **xoff** para hacer que se generaran valores más estables y cambié el color del trazo dependiendo del valor del ruido de perlin:
 
 ``` js
 let t = 0.0;
@@ -32,4 +32,5 @@ function draw()
 
 ```
 
+**Resultado**
 ![Resultado de la actividad07 - Ruido de Perlin](../../../../../src/assets/Unidad01/A07_Resultado0.gif)
