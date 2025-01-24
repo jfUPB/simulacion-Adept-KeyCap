@@ -33,4 +33,5 @@ function draw()
 ```
 
 **Resultado**
+
 ![Resultado de la actividad07 - Ruido de Perlin](../../../../../src/assets/Unidad01/A07_Resultado0.gif)
