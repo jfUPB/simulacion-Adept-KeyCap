@@ -153,10 +153,7 @@ class Walker
 
 **Resultado de la actividad**
 
-<video width="640" height="360" controls>
-  <source src="/simulacion-Adept-KeyCap/A09_Resultado0.mp4" type="video/mp4">
-  Tu navegador no soporta la reproducción de videos.
-</video>
+![Resultado de la actividad09](../../../../../src/assets/Unidad01/A09_Resultado1.gif)
 
 - [Click aquí para probarlo tu mismo](https://editor.p5js.org/Adept-KeyCap/full/4nhPijn-Y)
 
