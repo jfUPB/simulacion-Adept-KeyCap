@@ -151,7 +151,9 @@ class Walker
 
 ```
 
-![Resultado de la actividad09 - Pieza Interactiva](../../../../../src/assets/Unidad01/A09_Resultado.mp4)
+![Resultado de la actividad09 - Pieza Interactiva](../../../../../src/assets/Unidad01/A09_Resultado0.mp4)
 
+- [Click aquí para probarlo tu mismo](https://editor.p5js.org/Adept-KeyCap/full/4nhPijn-Y)
 
-Al final lo único que cambió sobre la marcha fue el fondo de la pantalla al cual cambia su color con interpolación para hacerlo negro cuando hay mucho ruido, lo que por alguna razón termino dando cierto efecto visual de ghosting con respecto a los objetos que si se pintan bien en pantalla, mi teoría es que puede que al estar cambiando el color de la pantalla, no esté cambiando entre blanco y negro sino entre negro y vacío, por lo que le da este efecto en el background, me gustó tanto como se veía visualmente que decidí no tocarlo más para que quedara con este efecto.
+- Al final lo único que cambió sobre la marcha fue el fondo de la pantalla al cual cambia su color con interpolación para hacerlo negro cuando hay mucho ruido, lo que por alguna razón termino dando cierto efecto visual de ghosting con respecto a los objetos que si se pintan bien en pantalla, mi teoría es que puede que al estar cambiando el color de la pantalla, no esté cambiando entre blanco y negro sino entre negro y vacío, por lo que le da este efecto en el background, me gustó tanto como se veía visualmente que decidí no tocarlo más para que quedara con este efecto.
+
