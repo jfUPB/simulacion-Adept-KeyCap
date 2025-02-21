@@ -1,0 +1,4 @@
+- Al principio noté la diferencia de los nombres de la variable, donde se establece como ```position``` pero al final se intenta llamar como ```posicion``` por lo que esperaría que me devolviera o un error (Ya que no se está declarando la variable), o el vector que se intenta crear, no estoy seguro debido a mi poca experiencia con JavaScript.
+- Efectivamente se impimió en consola en vector modificado llamado ```posicion``` pero cuando intento imprimir en consola ```position``` me tira un error ya que no está definido.
+- El código está realizado un **paso por referencia** ya que estamos referenciando a un objeto ya creado dentro de una función _(La cual modifica a los valores almacenados dentro del objeto)_, por lo tanto se reemplazan los valores originales por los de la referencia.
+- Aprendí que a la hora de no declarar de manera explicita una variable, JS la trata como una variable global, a diferencia de C# que no poermitiría esto.
