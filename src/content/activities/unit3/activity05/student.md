@@ -4,16 +4,13 @@
 ```js
 // Función dentro del la clase Mover.js
 ApplyForce(force){
-  this.acceleration.Add(Force)
+  this.acceleration.Add(force)
 }
 
 //Update en el Sketch.js
 Update{
   mover.ApplyForce(gravity)
   mover.ApplyForce(wind)
-
-//Tenemos que limpiar estos valores andes del proximo frame para poder aplicar las fuerzas en el tiempo
-  mover.acceleration.mult(0)
 }
 ```
 
