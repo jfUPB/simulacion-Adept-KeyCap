@@ -120,8 +120,85 @@ class Particle {
 ```
 
 ##
-- **Atracción gravitacional:** 
-#### [Link de la simulación](https://editor.p5js.org/Adept-KeyCap/full/9OzdCZ5Um)
+- **Atracción gravitacional:** Aquí simulo la atracción gravitacional entre dos objetos, uno fijo en el centro ```attractor``` y otro en movimiento ```mover```. El mover es afectado por una fuerza gravitacional calculada con la Ley de Gravitación Universal, lo que hace que su trayectoria se curve y pueda orbitar alrededor del attractor.
+#### [Link de la simulación](https://editor.p5js.org/Adept-KeyCap/full/H39TS0sH9)
 ```js
+let mover;
+let attractor;
+let gravityStrenght = 1;
+
+function setup() {
+  createCanvas(640, 240);
+  mover = new Mover(300, 190, 2);
+  attractor = new Attractor();
+}
+
+function draw() {
+  background(255);
+
+  let force = attractor.attract(mover);
+  mover.applyForce(force);
+  mover.update();
+
+  attractor.show();
+  mover.show();
+}
+
+class Mover {
+  constructor(x, y, mass) {
+    this.mass = mass;
+    this.radius = mass * 8;
+    this.position = createVector(x, y);
+    this.velocity = createVector(1, 0);
+    this.acceleration = createVector(0, 0);
+  }
+  // Segunda ley de newton
+  applyForce(force) {
+    let forceVector = p5.Vector.div(force, this.mass);
+    this.acceleration.add(forceVector);
+  }
+
+  update() {
+    this.velocity.add(this.acceleration);
+    this.position.add(this.velocity);
+    this.acceleration.mult(0);
+  }
+
+  show() {
+    stroke(0);
+    strokeWeight(2);
+    fill(127, 127);
+    circle(this.position.x, this.position.y, this.radius * 2);
+  }
+}
+
+class Attractor {
+  constructor() {
+    this.position = createVector(width / 2, height / 2);
+    this.mass = 20;
+  }
+
+  attract(mover) {
+    // dirección de la fuerza
+    let force = p5.Vector.sub(this.position, mover.position);
+    // distancia entre los objetos
+    let distance = force.mag();
+    // limitar la distancia para establecer área efectiva de la gravedad
+    distance = constrain(distance, 5, 25);
+
+    // magnitud de la fuerza gravitacional
+    let strength = (gravityStrenght * this.mass * mover.mass) / (distance * distance);
+    // obtener el vector de fuerza
+    force.setMag(strength);
+    return force;
+  }
+
+  show() {
+    strokeWeight(0);
+    stroke(0);
+    fill(0, 255);
+    circle(this.position.x, this.position.y, this.mass * 2);
+  }
+}
 
 ```
