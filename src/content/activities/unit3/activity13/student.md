@@ -2,4 +2,4 @@
 
 - **Animación:** En este apartado, aunque en este ejemplo no se aplique de manera directa todas las formulas y conceptos matemáticos, es bastante importante saber representar visualmente por medio de las animaciónes, el cómo se comporta el cuerpo de cualquier objeto o ser dentro del agua, en el aire, cuando está en lugares con diferente gravedad, etc.
 
-- **Experiencias Interactivas:** 
+- **Experiencias Interactivas:** En cuanto a el apartado de experiencias puedo relacionarlo directamente con los montajes físicos que se implementan, en esto reconozco que tienen que tener conceptos claros sobre todas estas propiedades fisicas, además de eso, al igual que en videojuegos, se debe poder simular digitalmente este tipo de comportamientos para poder añadir interacción entre los usuarios y un arespuesta acorde de forma digital por medio del montaje físico.
