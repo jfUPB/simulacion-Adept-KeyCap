@@ -1,0 +1,2 @@
+- La obra de Memo me parece bastante hipnótica, la secuencia de movimientos empezó de una manera muy armónica y lo vuelve muy interesante de ver.
+- Me gustó mucho la forma en la que se interconectan los puntos, cada interacción en tre ellos se ve muy natural y es visualmente atractivo, al mismo tiempo me causa mucha curiosidad cómo las programó, cuales eran las condiciones que se imponen para crear las conexiones y las visuales de forma tan natural, entonces me gustaría saber más con respecot a ese apartado.
