@@ -98,3 +98,146 @@ function draw() {
 ### [Link de la simulación](https://editor.p5js.org/Adept-KeyCap/full/7KWghXoAb)
 
 ## 4.4:
+sketch.js
+```js
+let emitters = [];
+let attractor;
+
+let gravityStrenght = 1;
+
+function setup() {
+  createCanvas(640, 240);
+  let text = createP("click to add particle systems");
+  attractor = new Attractor((width / 2, height / 2), 40);
+}
+
+function draw() {
+  background(255);
+  
+  attractor.show();
+  
+  for (let emitter of emitters) {
+    emitter.run();
+    emitter.addParticle();
+    
+    for (let particle of emitter.particles){
+      let force = attractor.attract(particle);
+      particle.applyForce(force);
+    }
+    
+  }
+}
+
+function mousePressed() {
+  emitters.push(new Emitter(mouseX, mouseY));
+}
+
+```
+
+attractor.js
+```js
+class Attractor {
+  constructor() {
+    this.position = createVector(width / 2, height / 2);
+    this.mass = 20;
+  }
+
+  attract(particle) {
+    // dirección de la fuerza
+    let force = p5.Vector.sub(this.position, particle.position);
+    // distancia entre los objetos
+    let distance = force.mag();
+    // limitar la distancia para establecer área efectiva de la gravedad
+    distance = constrain(distance, 5, 20);
+
+    // magnitud de la fuerza gravitacional
+    let strength = (gravityStrenght * this.mass * particle.mass) / (distance * distance);
+    // obtener el vector de fuerza
+    force.setMag(strength);
+    return force;
+  }
+
+  show() {
+    strokeWeight(0);
+    stroke(0);
+    fill(0, 255);
+    circle(this.position.x, this.position.y, this.mass * 2);
+  }
+}
+```
+
+emitter.js
+```js
+class Emitter {
+  constructor(x, y) {
+    this.origin = createVector(x, y);
+    this.particles = [];
+  }
+
+  addParticle() {
+    this.particles.push(new Particle(this.origin.x, this.origin.y));
+  }
+
+  run() {
+    // Looping through backwards to delete
+    for (let i = this.particles.length - 1; i >= 0; i--) {
+      this.particles[i].run();
+      if (this.particles[i].isDead()) {
+        // Remove the particle
+        this.particles.splice(i, 1);
+      }
+    }
+```
+
+particle.js
+```js
+class Particle {
+  constructor(x, y) {
+    this.position = createVector(x, y);
+    this.acceleration = createVector(0, 0);
+    this.velocity = createVector(random(-1, 1), random(-1, 0));
+    this.lifespan = 255.0;
+    this.mass = 50;
+  }
+
+  run() {
+    let gravity = createVector(0, 0.05);
+    this.applyForce(gravity);
+    this.update();
+    this.show();
+  }
+
+  applyForce(force) {
+    let forceVector = p5.Vector.div(force, this.mass);
+    this.acceleration.add(forceVector);
+  }
+
+  // Method to update position
+  update() {
+    this.velocity.add(this.acceleration);
+    this.position.add(this.velocity);
+    this.lifespan -= 2;
+    this.acceleration.mult(0);
+  }
+
+  // Method to display
+  show() {
+    stroke(0, this.lifespan);
+    strokeWeight(2);
+    fill(127, this.lifespan);
+    circle(this.position.x, this.position.y, 8);
+  }
+
+  // Is the particle still useful?
+  isDead() {
+    return this.lifespan < 0.0;
+  }
+}
+
+```
+- En esta parte apliqué el concepto de atracción gravitatoria, usando el marco de **Motion 101**. Permitiendo crear visuales llamativas de forma modular.
+
+   ![Resultados](../../../../../src/assets/Unidad05/A02_resultado1.png)
+
+### [Link de la simulación](https://editor.p5js.org/Adept-KeyCap/full/XhKEjdp7x)
+  
