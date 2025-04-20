@@ -390,3 +390,62 @@ function draw() {
   ![Resultados](../../../../../src/assets/Unidad05/A02_resultado2.png)
 
 ### [Link de la simulación](https://editor.p5js.org/Adept-KeyCap/full/Hy9XyZ6sm)
+
+## 4.6:
+
+sketch.js
+```js
+let emitter;
+
+let windForce;
+let windHeight;
+let windArea;
+
+function setup() {
+  createCanvas(1280/2, 480);
+  emitter = new Emitter(width / 2, 50);
+  
+  windForce = createVector(0.5, 0);
+  windArea = createVector(180, 220);
+}
+
+function draw() {
+  background(255,30);
+  
+  fill(100, 160, 255, 50);
+  rect(0, windArea.x, width, windArea.y - windArea.x);
+
+  // Apply gravity force to all Particles
+  let gravity = createVector(0, 0.1);
+  emitter.applyForce(gravity);
+  
+  emitter.addParticle();
+  emitter.run();
+  
+  for(var i = emitter.particles.length - 1; i > 0; i--){
+    let currentPart = emitter.particles[i];
+    var partPos = currentPart.position;
+    if(partPos.y < windArea.y && partPos.y > windArea.x){
+      console.log("inside wind");
+      currentPart.applyForce(windForce);
+    }
+  }
+}
+```
+> [!NOTE]
+> Los códigos de ```emitter.js``` y de ```particle.js``` son identicos a los del ejercicio anterior.
+
+- En este ejemplo lo que hice fue aplciar la fuerza del viento en un área especificada del **Canvas** para que cuando cruzen las particluas, solamente se les aplique la fuerza a aquellas que están dentro de la zona.
+
+  ![Resultados](../../../../../src/assets/Unidad05/A02_resultado3.png)
+
+### [Link de la simulación](https://editor.p5js.org/Adept-KeyCap/full/qG3gKHIAb)
+
+
+## 4.7:
+
+sketch.js
+```js
+
+```
+
