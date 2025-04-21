@@ -446,6 +446,82 @@ function draw() {
 
 sketch.js
 ```js
+// One ParticleSystem
+let emitter;
 
+//{!1} One repeller
+let repeller;
+let t = 0.0; //time
+
+function setup() {
+  createCanvas(640 , 240);
+  emitter = new Emitter(width / 2, 60);
+  repeller = new Repeller(width / 2, 250);
+}
+
+function draw() {
+  background(255);
+  emitter.addParticle();
+  // We’re applying a universal gravity.
+  let gravity = createVector(0, 0.1);
+  emitter.applyForce(gravity);
+  //{!1} Applying the repeller
+  emitter.applyRepeller(repeller);
+  emitter.run();
+
+  repeller.show();
+  repeller.updateForce(t);
+}
 ```
 
+repeller.js
+```js
+class Repeller {
+  constructor(x, y) {
+    this.position = createVector(x, y);
+    //{!1} How strong is the repeller?
+    this.power = 0;
+  }
+
+  show() {
+    stroke(0);
+    strokeWeight(2);
+    fill(this.power);
+    circle(this.position.x, this.position.y, this.power/2);
+  }
+
+  repel(particle) {
+    //{!6 .code-wide} This is the same repel algorithm we used in Chapter 2: forces based on gravitational attraction.
+    let force = p5.Vector.sub(this.position, particle.position);
+    let distance = force.mag();
+    distance = constrain(distance, 5, 50);
+    let strength = (-1 * this.power) / (distance * distance);
+    force.setMag(strength);
+    return force;
+  }
+  
+  updateForce(xoff){
+  noFill();
+  strokeWeight(10);
+  beginShape();
+
+  for (let i = 0; i < width; i++)
+  {
+    
+  }
+
+  let y = noise(xoff*0.1) * height;
+  xoff += 0.01;
+  this.power = y;
+  
+  endShape();
+  t += 0.05;
+  }
+}
+```
+
+- En este ejercicio el cambio que aplico es que ahora la fuerza del objeto ```Repeller``` cambia con el tiempo siguiendo el patrón de un ruido de perlin, esto tambn se visualiza gráficamente con el tamaño de la esfera.
+
+  ![Resultados](../../../../../src/assets/Unidad05/A02_resultado4.png)
+
+### [Link de la simulación](https://editor.p5js.org/Adept-KeyCap/full/_Rx8ykyNS)
