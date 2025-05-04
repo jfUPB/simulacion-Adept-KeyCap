@@ -7,4 +7,7 @@
 
 
 ### Conceptos de unidades anteriores
-- 
+- **Motion 101**: Como siempre, jugar con físcias es difertido, por lo que le adicionaré a las partículas un peso para poder hacer variacones en las interacciónes que implementaré. En particular haré una pelota con el que el usuario va a interactuar.
+- A esta misma pelota también le añadiré un coeficiente de rebote para que no siempre rebote infinitamentey así su comportamiento cambie con el tiempo.
+- También estaran lo que son cambios de entornos o zonas espefícias donde se aplican fuerzas diferentes.
+- Por último, la escena empieza con un ```emitter``` y un ```ball```, cada uno va a aparecer en una posición aleatoria según una distribución Gaussiana, para que tiendan a aparecer en la mitad, pero no siempre.
