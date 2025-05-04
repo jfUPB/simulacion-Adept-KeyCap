@@ -1,0 +1,4 @@
+- La suma de dos vectores se hace sumando cada uno de los componentes que se corresponden entre los 2 vectores, por ejemplo:
+  - Hay dos vectores con componentes **X** y **Y**, entonces el resultado de sumar estos 2, sería la suma de los componentes **X** y el resultado de la suma de los componentes **Y**.
+
+- La línea  ``` position = position + velocity ``` no funciona en el editor de P5 ya que a la hroa de trabaajar con JavaScript básico, no hay una manera nativa de crear vectores, suando solo este lenguaje base habría que usar otros recursos como Arrays para poder simular vectores, Sin emabargo el editor de P5 nos da una clase llamada ``` p5.Vector ``` la cual implementa vectores dentro de JavaScript, al ser una clase externa, estos se suman por medio de un método llamado  ``` P5.Vector.Add ```.

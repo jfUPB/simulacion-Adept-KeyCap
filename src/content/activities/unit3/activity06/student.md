@@ -1,0 +1,2 @@
+- Es necesario hacaer esto ya que si no limpiamos los datos y seguimos aplicando otras fuerzas en los **siguientes frames**, simplemente se va a sumar por encima del valor anterior, obteniendo un cálculo erroneo.
+- Entonces se hace en la línea final del método ```Update``` para que se logren primero aplicarse las fuerzas, y al final del frame **se vuelvan a establecer en cero** par aque en el próximo se pueda volver a hacer el cáculo de manera más precisa.

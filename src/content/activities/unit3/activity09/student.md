@@ -1,0 +1,3 @@
+- **Primero**: Evaluar cada lado de la formula para saber qué es lo qu estamos buscando y qué es lo que necesitamos para encoontrarlo.
+- **Segundo**: En el mundo de las fuerzas tenemos que usar tanto **Vectores** como números indivudiales o **Escalares**, hay que diferenciarlos, teniendo en cuenta que los **Vectores son distinguidos con una flecha encima del caracter con el que se representa** "→"
+- **Tercero**: Interpretar que operaciones se necesitan hacer y saber cómo expresarlas en código, ya que muchas de estas formuras no se escriben de manera continua sino que tienen diferentes posicionamientos, nos veremos obligados a interpretarlo en forma que se puedan escribir dentro de una línea usando operadores como ```() o ^```

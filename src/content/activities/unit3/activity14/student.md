@@ -1,0 +1,2 @@
+- En esta unidad seguí la misma metodología de esta unidad anterior, seguí en cada actividad el texto guía de forma correspondiente a la temática, lo cual provó ser efectivo, pero no tanto como la unidad pasada, por lo que esta vez también revisé recursos externos para poder comprender estos conceptos a mayor profundidad, también considero que m ejugó en contra el factor de tiempo disponible que tuve a comparación de las unidades pasadas.
+-   Para la próxima unidad pienso seguir con esta estrategia debido a que de momento es la que más me ha permitido comprender.

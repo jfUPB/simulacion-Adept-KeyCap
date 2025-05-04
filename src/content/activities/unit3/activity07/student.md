@@ -1,0 +1,3 @@
+- El problema que le veo _(y me tomó un rato entender)_ es que lo qu ele estamos mandando a la función es una **instancia** la cual contiene los valores, no solamente los valores.
+- Por ende, cuando decimos ```force.div(x)``` estamos haciendo un paso por referencia, osea que lo que se está almacenando es el objeto original, al divirlo por un valor cualquiera, este va a cambiar para siempre.
+- Para poder usar esta fuerza varias veces sin que sea alterada debemos **almacenar los valores de la referencia**.
